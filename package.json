@@ -1,0 +1,20 @@
+{
+  "name": "shuttle",
+  "version": "0.1.0",
+  "description": "Task-aware heartbeat for autonomous long-running work",
+  "skills": [
+    "skills/add",
+    "skills/start",
+    "skills/stop",
+    "skills/status",
+    "skills/kickoff"
+  ],
+  "author": {
+    "name": "agentweave"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/agentweave/shuttle"
+  },
+  "license": "MIT"
+}

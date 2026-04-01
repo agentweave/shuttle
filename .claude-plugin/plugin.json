@@ -1,0 +1,17 @@
+{
+  "name": "shuttle",
+  "description": "Task-aware heartbeat for autonomous long-running work",
+  "version": "0.1.0",
+  "author": {
+    "name": "agentweave"
+  },
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "heartbeat",
+    "tasks",
+    "autonomous",
+    "skills"
+  ],
+  "skills": "./skills/"
+}
