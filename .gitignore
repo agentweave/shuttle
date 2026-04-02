@@ -6,6 +6,9 @@
 .shuttle.md
 CLAUDE.local.md
 
+# Internal assets (social preview source, promo — not published)
+assets/internal/
+
 # Internal docs (specs, plans — not published)
 docs/internal/
 

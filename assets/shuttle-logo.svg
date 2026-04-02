@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#0f0f1a"/>
+    </linearGradient>
+    <linearGradient id="sh" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00d2ff"/>
+      <stop offset="100%" style="stop-color:#7b61ff"/>
+    </linearGradient>
+    <linearGradient id="sh2" x1="100%" y1="0%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#7b61ff"/>
+      <stop offset="100%" style="stop-color:#00d2ff"/>
+    </linearGradient>
+    <linearGradient id="trail" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00d2ff" stop-opacity="0"/>
+      <stop offset="100%" style="stop-color:#00d2ff" stop-opacity="0.5"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect x="16" y="16" width="480" height="480" rx="96" fill="url(#bg)"/>
+  <!-- Warp threads (vertical, subtle) -->
+  <line x1="176" y1="130" x2="176" y2="382" stroke="#7b61ff" stroke-width="1.5" opacity="0.12"/>
+  <line x1="216" y1="130" x2="216" y2="382" stroke="#7b61ff" stroke-width="1.5" opacity="0.12"/>
+  <line x1="256" y1="130" x2="256" y2="382" stroke="#7b61ff" stroke-width="1.5" opacity="0.12"/>
+  <line x1="296" y1="130" x2="296" y2="382" stroke="#7b61ff" stroke-width="1.5" opacity="0.12"/>
+  <line x1="336" y1="130" x2="336" y2="382" stroke="#7b61ff" stroke-width="1.5" opacity="0.12"/>
+  <!-- Outer glow -->
+  <path d="M 130 256 Q 190 196, 256 196 Q 322 196, 382 256 Q 322 316, 256 316 Q 190 316, 130 256 Z" fill="none" stroke="url(#sh)" stroke-width="0.5" opacity="0.1"/>
+  <!-- Thread trail (weft, fading from left) -->
+  <line x1="80" y1="256" x2="148" y2="256" stroke="url(#trail)" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Shuttle body (lens shape) -->
+  <path d="M 148 256 Q 200 208, 256 208 Q 312 208, 364 256 Q 312 304, 256 304 Q 200 304, 148 256 Z" fill="url(#sh)" opacity="0.85"/>
+  <!-- Inner hollow -->
+  <path d="M 194 256 Q 222 232, 256 232 Q 290 232, 318 256 Q 290 280, 256 280 Q 222 280, 194 256 Z" fill="#1a1a2e"/>
+  <!-- Center bobbin -->
+  <circle cx="256" cy="256" r="8" fill="url(#sh2)" opacity="0.95"/>
+  <circle cx="256" cy="256" r="4" fill="#1a1a2e"/>
+  <circle cx="256" cy="256" r="1.5" fill="url(#sh)" opacity="0.9"/>
+</svg>
