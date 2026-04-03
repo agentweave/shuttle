@@ -47,6 +47,10 @@ Or skip the kickoff and add tasks directly:
 /shuttle:start --prompt "..."               — custom prompt mode (no task file, no pre-check)
 ```
 
+## Protocol
+
+The task file format and behavioral contract are defined in the [Shuttle Protocol spec](docs/protocol.md), so other implementations can produce and consume compatible task files.
+
 ## Cortex Integration
 
 Cortex delegates heartbeat management to Shuttle. Workers get full task mode with idle suppression. The coordinator uses custom prompt mode (`--prompt`).
