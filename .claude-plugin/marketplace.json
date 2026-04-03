@@ -1,16 +1,10 @@
 {
-  "name": "agentweave",
-  "owner": {
-    "name": "agentweave"
-  },
-  "description": "Open source tools for AI agent coordination",
+  "name": "shuttle",
   "plugins": [
     {
       "name": "shuttle",
       "description": "Task-aware heartbeat for autonomous long-running work",
-      "author": {
-        "name": "agentweave"
-      },
+      "author": { "name": "agentweave" },
       "source": "./",
       "category": "development"
     }
