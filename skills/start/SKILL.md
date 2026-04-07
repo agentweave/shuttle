@@ -106,6 +106,19 @@ Create the `.claude/hooks/` directory if it doesn't exist. Write the following s
 # Blocks Shuttle tick prompts when no active tasks exist.
 # Installed by /shuttle:start, removed by /shuttle:stop.
 
+# NOTE: matcher is ignored for UserPromptSubmit hooks, so this
+# script must filter by prompt content itself.
+
+# Read hook input and extract the prompt (requires jq).
+# If jq is missing, PROMPT is empty and the script defaults to allow.
+PROMPT=$(jq -r '.prompt // empty' 2>/dev/null)
+
+# Only apply to Shuttle tick prompts — pass everything else through
+case "$PROMPT" in
+  "Shuttle tick:"*) ;;
+  *) exit 0 ;;
+esac
+
 TASK_FILE="<path>"
 
 if grep -q '^\*\*Status:\*\* \(ready\|in-progress\)' "$TASK_FILE" 2>/dev/null; then
@@ -124,11 +137,10 @@ Make the script executable using Bash: `chmod +x .claude/hooks/shuttle-precheck.
 
 Read `.claude/settings.json` in the current project directory. If it doesn't exist, create it. If it exists, parse the existing JSON.
 
-If the `hooks.UserPromptSubmit` array does NOT already contain an entry with `"matcher": "Shuttle tick:"`, add the following entry to the array:
+If the `hooks.UserPromptSubmit` array does NOT already contain an entry with `"command": ".claude/hooks/shuttle-precheck.sh"`, add the following entry to the array:
 
 ```json
 {
-  "matcher": "Shuttle tick:",
   "hooks": [
     {
       "type": "command",

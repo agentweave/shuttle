@@ -168,7 +168,7 @@ else:
     skip tick
 ```
 
-The reference implementation uses a shell script and the `UserPromptSubmit` hook with a matcher on its prefix (`Shuttle tick:`) to block the prompt before it reaches the model. Other implementations MAY use any gating mechanism, but MUST scope it to task-mode ticks only.
+The reference implementation uses a shell script and the `UserPromptSubmit` hook. The script reads the prompt from stdin JSON and filters by prefix (`Shuttle tick:`) — the `matcher` field is ignored for `UserPromptSubmit` hooks, so the script must self-filter. Other implementations MAY use any gating mechanism, but MUST scope it to task-mode ticks only.
 
 ### 5.2 Matching Pattern
 

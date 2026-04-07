@@ -22,7 +22,7 @@ If no matching cron is found, note this but continue cleanup (the cron may have 
 
 Read `.claude/settings.json` in the current project directory.
 
-If it exists and contains a `hooks.UserPromptSubmit` entry with `"matcher": "Shuttle tick:"`, remove that entry from the array. Write the updated JSON back.
+If it exists and contains a `hooks.UserPromptSubmit` entry whose `hooks` array includes `"command": ".claude/hooks/shuttle-precheck.sh"`, remove that entry from the array. Write the updated JSON back.
 
 If the `UserPromptSubmit` array is now empty, remove the `UserPromptSubmit` key. If the `hooks` object is now empty, remove the `hooks` key.
 
